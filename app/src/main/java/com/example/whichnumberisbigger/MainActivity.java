@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void flashColor(String message) {
+        //new CountDownTimer(3000,3000);
         int red = 255;
         int blue = 255;
         int green = 255;
