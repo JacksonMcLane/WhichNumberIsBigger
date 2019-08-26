@@ -5,7 +5,9 @@ public class BiggerNumberGame {
     private int score;
     private int upperLimit, lowerLimit;
 
+
     public BiggerNumberGame(int lowerLimit, int upperLimit) {
+        score = 0;
         this.upperLimit = upperLimit;
         this.lowerLimit = lowerLimit;
     }
@@ -16,8 +18,9 @@ public class BiggerNumberGame {
             //store in numberL
             //store another number that is different, store in numberR
         numberL = (int)(Math.random()*(upperLimit-lowerLimit+1) + lowerLimit);
-        do{numberR = (int)(Math.random()*(upperLimit-lowerLimit+1) + lowerLimit);}
-            while (numberR == numberL);
+        do {
+            numberR = (int)(Math.random()*(upperLimit-lowerLimit+1) + lowerLimit);
+        } while (numberR == numberL);
 
     }
 
@@ -26,9 +29,11 @@ public class BiggerNumberGame {
             // based on the values of numberLeft & numberRight
         int correctAnswer = Math.max(numberL, numberR);
         if(answer == correctAnswer) {
+            score++;
             return "Correct!";
         }
         else {
+            score--;
             return "Wrong!";
         }
     }
