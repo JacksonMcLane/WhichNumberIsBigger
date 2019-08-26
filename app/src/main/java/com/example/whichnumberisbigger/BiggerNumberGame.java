@@ -10,6 +10,7 @@ public class BiggerNumberGame {
         score = 0;
         this.upperLimit = upperLimit;
         this.lowerLimit = lowerLimit;
+        generateRandomNumbers();
     }
 
 
@@ -26,7 +27,7 @@ public class BiggerNumberGame {
 
     public String checkAnswer(int answer) {
         //determine if answer is right and return a relevant message
-            // based on the values of numberLeft & numberRight
+            // based on the values of numberL & numberR
         int correctAnswer = Math.max(numberL, numberR);
         if(answer == correctAnswer) {
             score++;
