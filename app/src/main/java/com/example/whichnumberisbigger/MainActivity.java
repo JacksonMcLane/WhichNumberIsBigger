@@ -74,11 +74,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void flashColor(String message) {
-        //new CountDownTimer(3000,3000);
+
         int red = 255;
         int blue = 255;
         int green = 255;
-        int shade = Color.rgb(red, blue ,green);
+        final int shade = Color.rgb(red, blue ,green);
 
         if(message.equals("Correct!")) {
             int r = 50;
@@ -94,7 +94,19 @@ public class MainActivity extends AppCompatActivity {
             int color = Color.rgb(r, g, b);
             constraintLayout.setBackgroundColor(color);
         }
-        constraintLayout.setBackgroundColor(shade);
+
+        new CountDownTimer(300,300){
+            public void onFinish(){
+                constraintLayout.setBackgroundColor(shade);
+            }
+
+            @Override
+            public void onTick(long l) {
+
+            }
+        }.start();
+
+
     }
 
     private void wireWidgets() {
